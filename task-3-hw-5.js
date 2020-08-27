@@ -14,22 +14,24 @@ class Storage {
   }
 
   removeItem(item) {
-      if this.item = item 
+    if (items.indexOf(item) !== -1) {
+      items.splice(items.indexOf(item), 1);
+    }
   }
 }
 
 const storage = new Storage([
-    "Нанитоиды",
-    "Пролонгер",
-    "Железные жупи",
-    "Антигравитатор",
-  ]);
-  
-  const items = storage.getItems();
-  console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
-  
-  storage.addItem("Дроид");
-  console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
-  
-  storage.removeItem("Пролонгер");
-  console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
+  "Нанитоиды",
+  "Пролонгер",
+  "Железные жупи",
+  "Антигравитатор",
+]);
+
+const items = storage.getItems();
+console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
+
+storage.addItem("Дроид");
+console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
+
+storage.removeItem("Пролонгер");
+console.log(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
